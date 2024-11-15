@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link href="details.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-container">
+        <h1 class="title">Alumni Profile</h1>
+        <hr>
+        <form class="profile-form" method="POST" action="https://j2wlz32q3l.execute-api.us-east-1.amazonaws.com/AlumniProfileapi">
+            <div class="form-group">
+                <label for="fullname">Name</label>
+                <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="emp-status">Employment Status</label>
+                <select name="stat" required>
+                    <option>Select your current status</option>
+                    <option>Employed full time</option>
+                    <option>Employed part time</option>
+                    <option>Self-employed full time</option>
+                    <option>Self-employed part time</option>
+                    <option>Homemaker, taking care of a family member or on maternity/paternity leave</option>
+                    <option>Unemployed and looking for work</option>
+                    <option>Unemployed and not looking for work</option>
+                    <option>Retired</option>
+                    <option>Unable to work</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="industry">Industry</label>
+                <input type="text" name="industry" required>
+            </div>
+            <div class="form-group">
+                <label for="employer">Employer</label>
+                <input type="text" name="employer">
+            </div>
+            <div class="form-group">
+                <label for="occupation">Occupation</label>
+                <input type="text" name="occupation">
+            </div>
+            <div class="form-group">
+                <label for="experience">Experience Level</label>
+                <select name="experience" required>
+                    <option>Select your relevant experience level</option>
+                    <option>Intern / Trainee</option>
+                    <option>Junior / Entry-level (0-2 years experience)</option>
+                    <option>Mid-level (2+ years experience)</option>
+                    <option>Lead / Manager</option>
+                    <option>Senior Manager / Director</option>
+                    <option>Executive</option>
+                    <option>Not Applicable</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Is it your current employer?</label>
+                <input type="checkbox" name="current-employer">
+            </div>
+            <div class="form-group">
+                <label for="highestdegree">Highest Degree</label>
+                <select name="highestdegree" required>
+                    <option>Select your highest level of education</option>
+                    <option>Less than high school diploma (or equivalent)</option>
+                    <option>High school diploma (or equivalent)</option>
+                    <option>Some college but no degree</option>
+                    <option>Associate Degree (e.g., AA, AS)</option>
+                    <option>Bachelor's degree (e.g., BA, AB, BS)</option>
+                    <option>Master's degree (e.g., MA, MS, MEng, MEd, MSW, MBA)</option>
+                    <option>Professional school degree (e.g., MD, DDS, DVMM, LLB, JD)</option>
+                    <option>Doctorate degree (e.g., PhD, EdD)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="major">Field or Major</label>
+                <select name="major" required>
+                    <option>Ex: Business</option>
+                    <option>Business</option>
+                    <option>Computer Science</option>
+                    <option>Engineering</option>
+                    <option>Mathematics and Statistics</option>
+                    <option>Physical Sciences</option>
+                    <option>Biological Sciences</option>
+                    <option>Health Professions</option>
+                    <option>Legal Professions</option>
+                    <option>Education</option>
+                    <option>Social Sciences</option>
+                    <option>Arts and Humanities</option>
+                    <option>Other</option>
+                    <option>NA</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Are you currently a student?</label>
+                <input type="checkbox" name="current-student">
+            </div>
+            <div class="form-group">
+                <label for="skills">Top Skills</label>
+                <select name="skills" required>
+                    <option>Ex: Machine Learning</option>
+                    <option>Accounting</option>
+                    <option>Data Structures and Algorithms</option>
+                    <option>Android Software Development</option>
+                    <option>Big Data</option>
+                    <option>Business Analytics</option>
+                    <option>Cloud Computing</option>
+                    <option>Communication</option>
+                    <option>Cyber Security</option>
+                    <option>Data Analysis</option>
+                    <option>Data Mining</option>
+                    <option>Data Visualization</option>
+                    <option>Database</option>
+                    <option>Deep Learning</option>
+                    <option>Entrepreneurship</option>
+                    <option>Finance</option>
+                    <option>Human Resources</option>
+                    <option>Java Programming</option>
+                    <option>Leadership</option>
+                    <option>Machine Learning</option>
+                    <option>Marketing</option>
+                    <option>Probability and Statistics</option>
+                    <option>Project Management</option>
+                    <option>Python Programming</option>
+                    <option>R Programming</option>
+                    <option>Recommender Systems</option>
+                    <option>Sales</option>
+                    <option>Scala Programming</option>
+                    <option>SQL</option>
+                    <option>Strategic Management</option>
+                    <option>Supply Chain Management</option>
+                    <option>User Experience</option>
+                    <option>Web Development</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" name="location" placeholder="Tell the city, state or country you live in" required>
+            </div>
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="gender-options">
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="other"> Other</label>
+                    <label><input type="radio" name="gender" value="prefer-not-to-say"> I'd rather not say</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dob">D/O/B</label>
+                <input type="date" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="interest">In which field would you like to work?</label>
+                <input type="text" name="interest" placeholder="Ex. Web Development" required>
+            </div>
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+    </div>
+    <script src="javascript-files/jquery.min.js"></script>
+    <script src="javascript-files/bootstrap.js"></script>
+</body>
+</html>

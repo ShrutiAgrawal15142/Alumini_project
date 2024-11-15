@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link href="studentProfile.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="main-container">
+        <h1>Student Profile</h1>
+        <hr>
+        <form method="POST" action="https://8h9ago61k7.execute-api.us-east-1.amazonaws.com/StudentProfile-api">
+            <div class="row">
+                <div class="col-lg-3">
+                    <label for="fullname">Name</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="col-lg-3">
+                    <label for="fullname">Email ID</label>
+                    <input type="email" name="email">
+                </div>
+                <div class="col-lg-3">
+                    <label for="fullname">Phone Number</label>
+                    <input type="text" name="phone">
+                </div>
+                <div class="col-lg-3">
+                    <label for="fullname">UID</label>
+                    <input type="text" name="uid">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <label for="day-hostler">Day Scholar/Hostler</label>
+                    <input type="text" name="day_hostler">
+                </div>
+                <div class="col-lg-3">
+                    <label for="branch">Branch</label>
+                    <input type="text" name="branch">
+                </div>
+                <div class="col-lg-3">
+                    <label for="emp-status">Employment Status</label>
+                    <select name="employment_status">
+                        <option>Select your current status</option>
+                        <option>Employed full time</option>
+                        <option>Employed part time</option>
+                        <option>Self-employed full time</option>
+                        <option>Self-employed part time</option>
+                        <option>Intern at a company</option>
+                        <option>Not Employed</option>
+                    </select>
+                </div>
+                <div class="col-lg-3">
+                    <label for="highest-degree">Highest Degree</label>
+                    <select name="highest_degree">
+                        <option>Select your highest level of education</option>
+                        <option>Less than high school diploma(or equivalent)</option>
+                        <option>High school diploma(or equivalent)</option>
+                        <option>Some college but no degree</option>
+                        <option>Associate Degree (e.g.,AA,AS)</option>
+                        <option>Bachelor's degree (e.g.,BA,AB,BS)</option>
+                        <option>Master's degree (e.g.,MA,MS,MEng,MEd,MSW,MBA)</option>
+                        <option>Professional school degree (e.g.,MD,DDS,DVMM,LLB,JD)</option>
+                        <option>Doctorate degree(e.g.,PhD, EdD)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <label for="field">Field or Major</label>
+                    <select name="field">
+                        <option>Ex: Business</option>
+                        <option>Business</option>
+                        <option>Computer Science</option>
+                        <option>Engineering</option>
+                        <option>Mathematics and Statistics</option>
+                        <option>Physical Sciences</option>
+                        <option>Biological Sciences</option>
+                        <option>Health Professions</option>
+                        <option>Legal Professions</option>
+                        <option>Education</option>
+                        <option>Social Sciences</option>
+                        <option>Arts and Humanities</option>
+                        <option>Other</option>
+                        <option>NA</option>
+                    </select>
+                </div>
+                <div class="col-lg-3">
+                    <label for="top-skills">Top Skills</label>
+                    <select name="skill">
+                        <option>Ex: Machine Learning</option>
+                        <option>Accounting</option>
+                        <option>Data Structures and Algorithms</option>
+                        <option>Android Software Development</option>
+                        <option>Big Data</option>
+                        <option>Business Analytics</option>
+                        <option>Cloud Computing</option>
+                        <option>Communication</option>
+                        <option>Cyber Security</option>
+                        <option>Data Analysis</option>
+                        <option>Data Mining</option>
+                        <option>Data Visualization</option>
+                        <option>Database</option>
+                        <option>Deep Learning</option>
+                        <option>Entrepreneurship</option>
+                        <option>Finance</option>
+                        <option>Human Resources</option>
+                        <option>Java Programming</option>
+                        <option>Leadership</option>
+                        <option>Machine Learning</option>
+                        <option>Marketing</option>
+                        <option>Probability and Statistics</option>
+                        <option>Project Management</option>
+                        <option>Python Programming</option>
+                        <option>R Programming</option>
+                        <option>Recommender Systems</option>
+                        <option>Sales</option>
+                        <option>Scala Programming</option>
+                        <option>SQL</option>
+                        <option>Strategic Management</option>
+                        <option>Supply Chain Management</option>
+                        <option>User Experience</option>
+                        <option>Web Development</option>
+                    </select>
+                </div>
+                <div class="col-lg-3">
+                    <label for="location">Location</label>
+                    <input type="text" name="locat" placeholder="City, state, or country you live in">
+                </div>
+                <div class="col-lg-3 gender">
+                    <label for="gender">Gender</label>
+                    <span><input type="radio" name="gender" value="female"> Female</span>
+                    <span><input type="radio" name="gender" value="male"> Male</span>
+                    <span><input type="radio" name="gender" value="other"> Other</span>
+                    <span><input type="radio" name="gender" value="prefer_not_to_say"> I'd rather not say</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <label for="dob">D/O/B</label>
+                    <input type="date" name="dob">
+                </div>
+                <div class="col-lg-3">
+                    <label for="intern">Would you like to do an internship?</label>
+                    <input type="text" name="intern" placeholder="Yes/No">
+                </div>
+                <div class="col-lg-3">
+                    <label for="interest">In which field would you like to do an internship?</label>
+                    <input type="text" name="interest" placeholder="Ex. Web Development">
+                </div>
+                <div class="col-lg-3">
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="javascript-files/jquery.min.js"></script>
+</body>
+</html>

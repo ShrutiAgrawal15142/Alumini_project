@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="loginform.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <img src="photos/CU.png" alt="University Logo">
+        <div class="container">
+            <div class="signup">Sign Up</div>
+            <div class="login">Log In</div>
+            
+            <div class="signup-form active">
+                <label for="type">Sign Up as</label>
+                <select name="type" class="input" onchange="selectUserType()" id="user">
+                    <option value="">Click Here</option>
+                    <option value="Alumni">Alumni</option>
+                    <option value="College">College</option>
+                    <option value="Student">Student</option>
+                </select><br>
+                <input type="text" placeholder="Enter Name" class="input" id="personalname" required><br>
+                <input type="email" placeholder="Enter Email Address" class="input" id="email" required><br>
+                <input type="password" placeholder="Choose a Password" class="input" id="password" required><br>
+                <input type="password" placeholder="Re-enter Password" class="input" id="confirm" required><br>
+                <div class="btn" onclick="registerButton()">Create account</div>
+            </div>
+          
+            <div class="login-form">
+                <label for="type">Login as</label>
+                <select name="type" class="input">
+                    <option value="Alumni">Alumni</option>
+                    <option value="College">College</option>
+                    <option value="Student">Student</option>
+                </select><br>
+                <input type="text" placeholder="Email or Username" class="input" id="inputUsername" required><br>
+                <input type="password" placeholder="Password" class="input" id="inputPassword" required><br>
+                <div class="btn" onclick="signInButton()">Log In</div>
+                <span><a href="#">I forgot my username or password.</a></span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initially show the signup form
+        const loginForm = document.querySelector('.login-form');
+        const signupForm = document.querySelector('.signup-form');
+
+        loginForm.style.display = 'none'; // Hide login form
+
+        // Event listeners for showing/hiding forms
+        document.querySelector('.signup').onclick = function() {
+            signupForm.style.display = 'block';
+            loginForm.style.display = 'none';
+        };
+
+        document.querySelector('.login').onclick = function() {
+            signupForm.style.display = 'none';
+            loginForm.style.display = 'block';
+        };
+
+        function selectUserType() {
+            const userType = document.getElementById("user").value;
+            console.log(userType);
+        }
+
+        function registerButton() {
+            const personalname = document.getElementById("personalname").value;	
+            const username = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords Do Not Match!");
+                return;
+            }
+
+            alert("Check your email for verification link");
+            const userType = document.getElementById("user").value;
+            if (userType === "Alumni") {
+                window.location.replace("Details.html");
+            } else if (userType === "Student") {
+                window.location.replace("StudentProfile.html");
+            }
+        }
+
+        function signInButton() {
+            const username = document.getElementById("inputUsername").value;
+            const password = document.getElementById("inputPassword").value;
+
+            alert("Login Successful");
+            window.location.replace("ResponsiveLayout.html");
+        }
+    </script>
+</body>
+</html>
